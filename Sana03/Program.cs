@@ -24,11 +24,21 @@ internal class Program
     static int indexOfMaxElemeent(double[] array)
     {
         int indexMax = 0;
-        for (int i = 1;  i < array.Length; i++)
+        for (int i = 1; i < array.Length; i++)
         {
             if (array[i] > array[indexMax]) indexMax = i;
         }
         return indexMax;
+    }
+
+    static double maxAbsElement(double[] array)
+    {
+        int max = 0;
+        for(int i = 1; i < array.Length;i++)
+        {
+            if (Math.Abs(array[i]) > Math.Abs(array[max])) max = i;
+        }
+        return array[max];
     }
     private static void Main(string[] args)
     {
@@ -54,8 +64,9 @@ internal class Program
         Console.WriteLine($"Мінімальний елемент масиву = {minEl}");
         double indexMaxEl = indexOfMaxElemeent(arr);
         Console.WriteLine($"Індекс максимального елементу масиву = {indexMaxEl}");
+        double maxAbsEl = maxAbsElement(arr);
+        Console.WriteLine($"Максимальний за модулем елемент масиву = {maxAbsEl}");
 
-        Console.WriteLine($"");
 
     }
 }
