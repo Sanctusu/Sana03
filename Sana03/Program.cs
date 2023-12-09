@@ -21,6 +21,15 @@ internal class Program
         return min;
     }
 
+    static int indexOfMaxElemeent(double[] array)
+    {
+        int indexMax = 0;
+        for (int i = 1;  i < array.Length; i++)
+        {
+            if (array[i] > array[indexMax]) indexMax = i;
+        }
+        return indexMax;
+    }
     private static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.Unicode;
@@ -28,6 +37,7 @@ internal class Program
 
         Random random = new Random();
 
+        Console.WriteLine("Введіть кількість елементів масиву:");
         int N = int.Parse(Console.ReadLine());
 
         double[] arr = new double[N];
@@ -41,7 +51,9 @@ internal class Program
         double sumOfNegEl = sumOfNegativeElements(arr);
         Console.WriteLine($"Сума від'ємних елементів масиву = {sumOfNegEl}");
         double minEl = minElement(arr);
-        Console.WriteLine($"Мшншмальний елемент масиву = {minEl}");
+        Console.WriteLine($"Мінімальний елемент масиву = {minEl}");
+        double indexMaxEl = indexOfMaxElemeent(arr);
+        Console.WriteLine($"Індекс максимального елементу масиву = {indexMaxEl}");
 
         Console.WriteLine($"");
 
