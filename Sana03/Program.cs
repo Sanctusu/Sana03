@@ -50,6 +50,16 @@ internal class Program
         }
         return sum;
     }
+
+    static int countIntegers(double[] array)
+    {
+        int count = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (Math.Truncate(array[i]) == array[i]) count++;
+        }
+        return count;
+    }
     private static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.Unicode;
@@ -64,7 +74,7 @@ internal class Program
 
         for (int i = 0; i < arr.Length; i++)
         {
-            arr[i] = random.Next(-100, 100) + (double) random.Next(10) / 10;
+            arr[i] = random.Next(-100, 100) + Math.Round(random.NextDouble(), 1);
             Console.WriteLine($"{i+1} - {arr[i]}");
         }
 
@@ -78,6 +88,8 @@ internal class Program
         Console.WriteLine($"Максимальний за модулем елемент масиву = {maxAbsEl}");
         double sumIndPosEl = sumOfIndexesPositiveElements(arr);
         Console.WriteLine($"Сума індексів додатних елементів = {sumIndPosEl}");
+        double countInt = countIntegers(arr);
+        Console.WriteLine($"Кількість цілих значень в масиві = {countInt}");
 
 
     }
