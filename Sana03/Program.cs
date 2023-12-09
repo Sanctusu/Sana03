@@ -12,6 +12,15 @@ internal class Program
         return sum;
     }
 
+    static double minElement(double[] array)
+    {
+        double min = array[0];
+        for (int i = 1; i < array.Length; i++) { 
+        if (array[i] < min) min = array[i];
+        }
+        return min;
+    }
+
     private static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.Unicode;
@@ -31,6 +40,8 @@ internal class Program
 
         double sumOfNegEl = sumOfNegativeElements(arr);
         Console.WriteLine($"Сума від'ємних елементів масиву = {sumOfNegEl}");
+        double minEl = minElement(arr);
+        Console.WriteLine($"Мшншмальний елемент масиву = {minEl}");
 
         Console.WriteLine($"");
 
