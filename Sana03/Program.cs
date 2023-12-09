@@ -64,7 +64,7 @@ internal class Program
 
         for (int i = 0; i < arr.Length; i++)
         {
-            arr[i] = random.Next(-100, 100);
+            arr[i] = random.Next(-100, 100) + (double) random.Next(10) / 10;
             Console.WriteLine($"{i+1} - {arr[i]}");
         }
 
