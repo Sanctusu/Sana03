@@ -40,6 +40,16 @@ internal class Program
         }
         return array[max];
     }
+
+    static int sumOfIndexesPositiveElements(double[] array)
+    {
+        int sum = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] > 0) sum += i;
+        }
+        return sum;
+    }
     private static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.Unicode;
@@ -66,6 +76,8 @@ internal class Program
         Console.WriteLine($"Індекс максимального елементу масиву = {indexMaxEl}");
         double maxAbsEl = maxAbsElement(arr);
         Console.WriteLine($"Максимальний за модулем елемент масиву = {maxAbsEl}");
+        double sumIndPosEl = sumOfIndexesPositiveElements(arr);
+        Console.WriteLine($"Сума індексів додатних елементів = {sumIndPosEl}");
 
 
     }
